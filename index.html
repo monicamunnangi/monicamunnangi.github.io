@@ -1,6 +1,30 @@
 <!DOCTYPE HTML>
 <html lang="en">
 
+<style>
+    /* Basic styling for buttons */
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px 5px;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      background-color: #e74c3c;
+    }
+
+    .pdf-btn {
+      background-color: #e74c3c;
+    }
+  </style>
+</head>
+<body>
+
+
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -215,10 +239,7 @@
                   </a>
                   <p>
                     Implemented a novel forecasting framework which utilizes a CNN to extract features from a patient's
-                    brain MRIs which we then fused with patient data and use RNN to track progression. </p>
-                  <p>
-                    Showed that the inclusion of these customised/patient-specific features increases the F1-score of
-                    0.4644, with recall at 0.4974 and precision of 0.4355 of forecasting the disease stages.
+                    brain MRIs which we then fused with patient data and use RNN to track progression.
                   </p>
                 </td>
               </tr>
@@ -330,124 +351,13 @@
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
 
-
-              <tr onmouseout="nerf_stop()" onmouseover="nerf_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='nerf_image'><video width=100% height=100% muted autoplay loop>
-                        <source src="images/" type="video/mp4">
-                        Your browser does not support the video tag.
-                      </video></div>
-                    <img src='images/GE.jpeg' width="160" height="160">
-                  </div>
-                  <script type="text/javascript">
-                    function nerf_start() {
-                      document.getElementById('nerf_image').style.opacity = "1";
-                    }
-
-                    function nerf_stop() {
-                      document.getElementById('nerf_image').style.opacity = "0";
-                    }
-                    nerf_stop()
-                  </script>
-                </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
-                  <a href="">
-                    <papertitle>Chest tube detection in Chest X-Ray images</papertitle>
-                  </a>
-                  <br>
-                  <br>
-                  <a href="https://collab.cs.umass.edu/wiki/people/ynshah">Yash Shah</a>,
-                  <strong>Monica Munnangi</strong>,
-                  <a href="https://www.linkedin.com/in/khaled-younis-5786948">Khaled Younis</a>,
-                  <a href="https://www.linkedin.com/in/katelynnye/">Katelyn Nye</a>,
-                  <a href="https://www.researchgate.net/profile/Gireesha_Rao">Gireesha Rao</a>,
-                  <a href="https://scholar.google.com/citations?user=keqdfi4AAAAJ&hl=en">John M Sabol</a>
-                  <br>
-                  <p>
-                    Developed a Neural Network classifier to identify if a chest tube is present in an X-Ray image and
-                    achieved
-                    an accuracy of 95% trained on 6000+ images, to help radiologists make better decisions which is
-                    waiting on FDA
-                    approval.</p>
-                </td>
-              </tr>
-
-              <tr onmouseout="learnaf_stop()" onmouseover="learnaf_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='learnaf_image'>
-                      <img src='images/NER.png' width="160">
-                    </div>
-                    <img src='images/NER.png' width="160" heoght="160">
-                  </div>
-                  <script type="text/javascript">
-                    function learnaf_start() {
-                      document.getElementById('learnaf_image').style.opacity = "1";
-                    }
-
-                    function learnaf_stop() {
-                      document.getElementById('learnaf_image').style.opacity = "0";
-                    }
-                    learnaf_stop()
-                  </script>
-                </td>
-                <td style="padding:20px;width:160;height:160;vertical-align:middle">
-                  <a href="">
-                    <papertitle>A Brief History of Named Entity Recognition</papertitle>
-                  </a>
-                  <br>
-                  <br>
-                  <strong>Monica Munnangi</strong>
-                  <br>
-                  <p>Named Entity Recognition (NER) is a process of extracting, disambiguation, and linking an entity
-                    from raw text to insightful and structured knowledge bases. The paper explores the evolution of NER
-                    from a rule based approach, supervised to unsupervised learning approaches.</p>
-                </td>
-              </tr>
-
-              <tr onmouseout="learnaf_stop()" onmouseover="learnaf_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='learnaf_image'>
-                      <img src='images/Captioning.jpg' width="160">
-                    </div>
-                    <img src='images/Captioning.jpg' width="160" heoght="160">
-                  </div>
-                  <script type="text/javascript">
-                    function learnaf_start() {
-                      document.getElementById('learnaf_image').style.opacity = "1";
-                    }
-
-                    function learnaf_stop() {
-                      document.getElementById('learnaf_image').style.opacity = "0";
-                    }
-                    learnaf_stop()
-                  </script>
-                </td>
-                <td style="padding:20px;width:160;height:160;vertical-align:middle">
-                  <a href="">
-                    <papertitle>Auto generation of Image Captions for Medical Images</papertitle>
-                  </a>
-                  <br>
-                  <br>
-                  <strong>Monica Munnangi</strong>,
-                  <a href="https://www.linkedin.com/in/anubha-t-43540116b/">Anubha Thandley</a>
-                  <br>
-                  <p>Medical report generation could be error-prone, long and tedious task for most physicians. To
-                    address this issue we have worked on automatic image captioning for medical images, exclusively
-                    Chest X-Ray images as they have large repository of publicly available dataset with captions and
-                    also datasets which have comprehensive reports.</p>
-                </td>
-              </tr>
-
               <tr onmouseout=" learnaf_stop()" onmouseover="learnaf_start()">
                 <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
-                    <div class="two" id='learnaf_image'>
-                      <img src='images/lstm_rf.png' width="160">
+                    <div class="two" id="learnaf_image" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);">
+                      <img src="" width="160">
                     </div>
-                    <img src='images/lstm_rf.png' width="160" heoght="160">
+                    <img src="images/Ai2.png" width="160" height="160" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);">
                   </div>
                   <script type="text/javascript">
                     function learnaf_start() {
@@ -457,30 +367,178 @@
                     function learnaf_stop() {
                       document.getElementById('learnaf_image').style.opacity = "0";
                     }
-                    learnaf_stop()
+                    learnaf_stop();
                   </script>
                 </td>
+
                 <td style="padding:20px;width:160;height:160;vertical-align:middle">
                   <a href="">
-                    <papertitle>Modeling Disease Progression Using Intensive Care Unit (ICU) Data</papertitle>
+                    <papertitle>On-the-fly Definition Augmentation of LLMs for Biomedical NER</papertitle>
                   </a>
                   <br>
                   <br>
-                  <a href="https://www.linkedin.com/in/anubha-t-43540116b/">Sai Chintha</a>,
-                  <a href="https://www.linkedin.com/in/anubha-t-43540116b/">Trang Le</a>,
-                  <strong>Monica Munnangi</strong>,
-                  <a href="https://www.linkedin.com/in/anubha-t-43540116b/">Subhajit Naskar</a>
+                  <a href="path_to_pdf.pdf" class="button pdf-btn" target="_blank">PDF</a>
+                  <a href="https://arxiv.org/abs/xxxx.xxxx" class="button pdf-btn" target="_blank">arXiv</a>
+                  <a href="https://github.com/username/repository" class="button pdf-btn" target="_blank">Code</a>
+                  .button
                   <br>
-                  <p>Attempted to predict the onset of Sepsis in patients using historical patient data. Precisely
-                    we used ICU and timestamp data of over 40,000 patients and used baseline logistic regression and
-                    random forests to predict the onset of Sepsis as a baseline. </p>
                   <p>
-                    Developed a Long Short - Term Memory
-                    (LSTM) model using PyTorch which led to F1 score of 0.82.
-                    Our model could predict the onset of Sepsis 6 hours before its clinical occurrence to assist
-                    patients with high risks of sepsis for early intervension.</p>
+
+                  </p>
                 </td>
               </tr>
+
+<!--              <tr onmouseout="nerf_stop()" onmouseover="nerf_start()">-->
+<!--                <td style="padding:20px;width:25%;vertical-align:middle">-->
+<!--                  <div class="one">-->
+<!--                    <div class="two" id='nerf_image'><video width=100% height=100% muted autoplay loop>-->
+<!--                        <source src="images/" type="video/mp4">-->
+<!--                        Your browser does not support the video tag.-->
+<!--                      </video></div>-->
+<!--                    <img src='images/GE.jpeg' width="160" height="160">-->
+<!--                  </div>-->
+<!--                  <script type="text/javascript">-->
+<!--                    function nerf_start() {-->
+<!--                      document.getElementById('nerf_image').style.opacity = "1";-->
+<!--                    }-->
+
+<!--                    function nerf_stop() {-->
+<!--                      document.getElementById('nerf_image').style.opacity = "0";-->
+<!--                    }-->
+<!--                    nerf_stop()-->
+<!--                  </script>-->
+<!--                </td>-->
+<!--                -->
+<!--                <td style="padding:20px;width:75%;vertical-align:middle">-->
+<!--                  <a href="">-->
+<!--                    <papertitle>Chest tube detection in Chest X-Ray images</papertitle>-->
+<!--                  </a>-->
+<!--                  <br>-->
+<!--                  <br>-->
+<!--                  <a href="https://collab.cs.umass.edu/wiki/people/ynshah">Yash Shah</a>,-->
+<!--                  <strong>Monica Munnangi</strong>,-->
+<!--                  <a href="https://www.linkedin.com/in/khaled-younis-5786948">Khaled Younis</a>,-->
+<!--                  <a href="https://www.linkedin.com/in/katelynnye/">Katelyn Nye</a>,-->
+<!--                  <a href="https://www.researchgate.net/profile/Gireesha_Rao">Gireesha Rao</a>,-->
+<!--                  <a href="https://scholar.google.com/citations?user=keqdfi4AAAAJ&hl=en">John M Sabol</a>-->
+<!--                  <br>-->
+<!--                  <p>-->
+<!--                    Developed a Neural Network classifier to identify if a chest tube is present in an X-Ray image and-->
+<!--                    achieved-->
+<!--                    an accuracy of 95% trained on 6000+ images, to help radiologists make better decisions which is-->
+<!--                    waiting on FDA-->
+<!--                    approval.</p>-->
+<!--                </td>-->
+<!--              </tr>-->
+
+<!--              <tr onmouseout="learnaf_stop()" onmouseover="learnaf_start()">-->
+<!--                <td style="padding:20px;width:25%;vertical-align:middle">-->
+<!--                  <div class="one">-->
+<!--                    <div class="two" id='learnaf_image'>-->
+<!--                      <img src='images/NER.png' width="160">-->
+<!--                    </div>-->
+<!--                    <img src='images/NER.png' width="160" heoght="160">-->
+<!--                  </div>-->
+<!--                  <script type="text/javascript">-->
+<!--                    function learnaf_start() {-->
+<!--                      document.getElementById('learnaf_image').style.opacity = "1";-->
+<!--                    }-->
+
+<!--                    function learnaf_stop() {-->
+<!--                      document.getElementById('learnaf_image').style.opacity = "0";-->
+<!--                    }-->
+<!--                    learnaf_stop()-->
+<!--                  </script>-->
+<!--                </td>-->
+<!--                <td style="padding:20px;width:160;height:160;vertical-align:middle">-->
+<!--                  <a href="">-->
+<!--                    <papertitle>A Brief History of Named Entity Recognition</papertitle>-->
+<!--                  </a>-->
+<!--                  <br>-->
+<!--                  <br>-->
+<!--                  <strong>Monica Munnangi</strong>-->
+<!--                  <br>-->
+<!--                  <p>Named Entity Recognition (NER) is a process of extracting, disambiguation, and linking an entity-->
+<!--                    from raw text to insightful and structured knowledge bases. The paper explores the evolution of NER-->
+<!--                    from a rule based approach, supervised to unsupervised learning approaches.</p>-->
+<!--                </td>-->
+<!--              </tr>-->
+
+<!--              <tr onmouseout="learnaf_stop()" onmouseover="learnaf_start()">-->
+<!--                <td style="padding:20px;width:25%;vertical-align:middle">-->
+<!--                  <div class="one">-->
+<!--                    <div class="two" id='learnaf_image'>-->
+<!--                      <img src='images/Captioning.jpg' width="160">-->
+<!--                    </div>-->
+<!--                    <img src='images/Captioning.jpg' width="160" heoght="160">-->
+<!--                  </div>-->
+<!--                  <script type="text/javascript">-->
+<!--                    function learnaf_start() {-->
+<!--                      document.getElementById('learnaf_image').style.opacity = "1";-->
+<!--                    }-->
+
+<!--                    function learnaf_stop() {-->
+<!--                      document.getElementById('learnaf_image').style.opacity = "0";-->
+<!--                    }-->
+<!--                    learnaf_stop()-->
+<!--                  </script>-->
+<!--                </td>-->
+<!--                <td style="padding:20px;width:160;height:160;vertical-align:middle">-->
+<!--                  <a href="">-->
+<!--                    <papertitle>Auto generation of Image Captions for Medical Images</papertitle>-->
+<!--                  </a>-->
+<!--                  <br>-->
+<!--                  <br>-->
+<!--                  <strong>Monica Munnangi</strong>,-->
+<!--                  <a href="https://www.linkedin.com/in/anubha-t-43540116b/">Anubha Thandley</a>-->
+<!--                  <br>-->
+<!--                  <p>Medical report generation could be error-prone, long and tedious task for most physicians. To-->
+<!--                    address this issue we have worked on automatic image captioning for medical images, exclusively-->
+<!--                    Chest X-Ray images as they have large repository of publicly available dataset with captions and-->
+<!--                    also datasets which have comprehensive reports.</p>-->
+<!--                </td>-->
+<!--              </tr>-->
+
+<!--              <tr onmouseout=" learnaf_stop()" onmouseover="learnaf_start()">-->
+<!--                <td style="padding:20px;width:25%;vertical-align:middle">-->
+<!--                  <div class="one">-->
+<!--                    <div class="two" id='learnaf_image'>-->
+<!--                      <img src='images/lstm_rf.png' width="160">-->
+<!--                    </div>-->
+<!--                    <img src='images/lstm_rf.png' width="160" heoght="160">-->
+<!--                  </div>-->
+<!--                  <script type="text/javascript">-->
+<!--                    function learnaf_start() {-->
+<!--                      document.getElementById('learnaf_image').style.opacity = "1";-->
+<!--                    }-->
+
+<!--                    function learnaf_stop() {-->
+<!--                      document.getElementById('learnaf_image').style.opacity = "0";-->
+<!--                    }-->
+<!--                    learnaf_stop()-->
+<!--                  </script>-->
+<!--                </td>-->
+<!--                <td style="padding:20px;width:160;height:160;vertical-align:middle">-->
+<!--                  <a href="">-->
+<!--                    <papertitle>Modeling Disease Progression Using Intensive Care Unit (ICU) Data</papertitle>-->
+<!--                  </a>-->
+<!--                  <br>-->
+<!--                  <br>-->
+<!--                  <a href="https://www.linkedin.com/in/anubha-t-43540116b/">Sai Chintha</a>,-->
+<!--                  <a href="https://www.linkedin.com/in/anubha-t-43540116b/">Trang Le</a>,-->
+<!--                  <strong>Monica Munnangi</strong>,-->
+<!--                  <a href="https://www.linkedin.com/in/anubha-t-43540116b/">Subhajit Naskar</a>-->
+<!--                  <br>-->
+<!--                  <p>Attempted to predict the onset of Sepsis in patients using historical patient data. Precisely-->
+<!--                    we used ICU and timestamp data of over 40,000 patients and used baseline logistic regression and-->
+<!--                    random forests to predict the onset of Sepsis as a baseline. </p>-->
+<!--                  <p>-->
+<!--                    Developed a Long Short - Term Memory-->
+<!--                    (LSTM) model using PyTorch which led to F1 score of 0.82.-->
+<!--                    Our model could predict the onset of Sepsis 6 hours before its clinical occurrence to assist-->
+<!--                    patients with high risks of sepsis for early intervension.</p>-->
+<!--                </td>-->
+<!--              </tr>-->
 
             </tbody>
           </table>
