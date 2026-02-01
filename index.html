@@ -18,6 +18,57 @@
     .pdf-btn {
       background-color: #D3D3D3;
     }
+
+    .job-highlight-banner {
+      margin-top: 25px;
+      padding: 12px 18px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #dfe8ff, #91b2ff);
+      color: #0f1a2b;
+      border: 1px solid #6691ff;
+      font-weight: 500;
+      box-shadow: 0px 6px 16px rgba(15, 26, 43, 0.25);
+    }
+
+    .job-highlight-banner details {
+      margin-top: 6px;
+      font-weight: 400;
+    }
+
+    .job-highlight-banner summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+    }
+
+    .job-highlight-banner summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .job-highlight-banner summary span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: #5f7fff;
+      color: #f6f9ff;
+      font-size: 18px;
+    }
+
+    .job-highlight-banner ul {
+      margin: 10px 0 0 20px;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    .job-highlight-banner li {
+      margin-bottom: 4px;
+    }
   </style>
 </head>
 <body>
@@ -61,6 +112,44 @@
                     <name>Monica Munnangi</name>
                   </p>
                   <br>
+
+                  <div class="job-highlight-banner">
+                    <details open> <summary style="cursor: pointer; font-weight: bold; color: #2563eb;">
+                        🚀 On the Job Market: Research Scientist / ML Roles (2026)
+                      </summary>
+                      <div style="margin-top: 10px; padding-left: 15px; border-left: 3px solid #e5e7eb;">
+                        <p>
+                          I specialize in <strong>Clinical NLP & Safety</strong>, building evaluation frameworks that ensure models are reliable in high-stakes healthcare settings.
+                        </p>
+                        <ul>
+                          <li><strong>Research:</strong> Investigating failure modes and human-AI communication dynamics.</li>
+                          <li><strong>History:</strong> Internships at <strong>AI2</strong> and <strong>Stanford Medicine (Shah Lab)</strong>.</li>
+                        </ul>
+                        <p>
+                           If there's a good fit, please contact me <a href="mailto:monicamunnangi23@gmail.com">here.</a>
+                        </p>
+                      </div>
+                    </details>
+                  </div>
+<!--                  <div class="job-highlight-banner">-->
+<!--                    <details>-->
+<!--                      <summary>-->
+<!--                        I am on the job market.-->
+<!--                      </summary>-->
+<!--                      <br>-->
+<!--                      I'm seeking full-time Research Scientist / ML Scientist / Applied Researcher roles starting Summer / Fall 2026.-->
+<!--                      If there's a good fit, please contact me at {first_name}{last_name}23@gmail.com.-->
+<!--                      <br> -->
+<!--                      <ul>-->
+<!--                        <li>I work in Healthcare & Natural Language Processing with a focus on evaluation and safety.-->
+<!--                          I investigate how models interpret and respond to human communication, analyze their failure modes, and build evaluation frameworks that better reflect real-world use.-->
+<!--                        </li>-->
+<!--                        <li>Interned at Allen Institute for AI and Stanford Medicine (Shah Lab) where I worked on knowledge augmentation and framework to evaluate LLM generated text.</li>-->
+<!--                        <li>Seeking Research Scientist / Machine Learning Scientist / ML Researcher / Applied Researcher roles.</li>-->
+<!--       -->
+<!--                      </ul>-->
+<!--                    </details>-->
+<!--                  </div>-->
                   <p>
                     I am a PhD candidate at <a href="https://www.khoury.northeastern.edu/">Khoury College of
                     Computer Science</a> advised by <a href="https://www.saiph.org/">Prof. Saiph Savage</a>
@@ -72,15 +161,12 @@
                     <a href="https://www.cs.cmu.edu/~anaik/">Aakanksha Naik</a>.
                   </p>
                   <p>
-                    My research focuses on improving the safety, reliability, and real-world performance of large language models in high-stakes settings.
-                    I investigate how models interpret and respond to human communication, analyze their failure modes, and build evaluation frameworks that better reflect real-world use.
-                    </p>
-                  <p>
+                    My current research interests are generally around improving the performance of LLMs: how they use information, and how to evaluate their performance.
+                    I also work on the improving the safety, reliability, and real-world performance of large language models in high-stakes settings.
                     I develop alignment methods through instruction tuning, domain-specific pretraining, supervised fine-tuning, and iterative evaluation.
-                    My work includes training smaller language models for specialized domains, building scalable data and supervision pipelines, and analyzing model behavior to improve robustness and safety.
                     While much of my work is grounded in healthcare applications, the approaches I develop generalize to broader domains where trustworthy AI is essential.
-                  </p>
 
+                    </p>
                   <p>
                     Prior to PhD, I graduated from <a href="https://www.umass.edu/">UMass Amherst</a>, with a Masters in Computer
                     Science. During this time, I interned at <a href="https://www.gehealthcare.com/">GE Healthcare</a> as as
@@ -107,23 +193,6 @@
 <!--                      href="https://scholar.google.co.in/citations?user=E7MgWdEAAAAJ&hl=en">Prof. Priyadarshini-->
 <!--                      J</a>.-->
 <!--                  </p>-->
-                  <p>
-                    I am currently on the job market for Summer/Fall 2026. If my research aligns with your team’s goals or you think I may be a good fit for an
-                    industry / research role, please feel free to reach out — I would love to chat.
-                  </p>
-
-                  <div style="
-                    margin-top: 20px;
-                    padding: 8px;
-                    border-radius: 10px;
-                    background-color: #c3ddf7;
-                    border: 1px solid #61779c;
-                    text-align: center;
-                    font-size: 18px;
-                    font-weight: 500;">
-                     <span style="font-size: 32px;">📢</span>
-                   I am on the job market for Summer / Fall 2026
-                </div>
 <!--                  &lt;!&ndash; Calendly link widget begin &ndash;&gt;-->
 <!--                  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">-->
 <!--                  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"-->
