@@ -131,8 +131,10 @@ name {
 
 .one {
   width: 160px;
-  height: 160px;
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .two {
@@ -172,6 +174,8 @@ tr.pub-row td:first-child {
   border-radius: 12px 0 0 12px;
   padding: 18px 16px 18px 18px;
   width: 22%;
+  text-align: center;
+  vertical-align: middle;
 }
 
 tr.pub-row td:last-child {
@@ -189,6 +193,8 @@ i.venue {
   font-style: italic;
   font-weight: 500;
   font-size: 13.5px;
+  display: block;
+  margin-top: 6px;
 }
 
 h3 {
