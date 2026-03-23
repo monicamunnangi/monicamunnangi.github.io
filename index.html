@@ -45,25 +45,20 @@
       list-style: none;
       cursor: pointer;
       display: flex;
+      justify-content: space-between;
       align-items: center;
       gap: 8px;
-      font-size: 16px;
     }
 
     .job-highlight-banner summary::-webkit-details-marker {
       display: none;
     }
 
-    .job-highlight-banner summary span {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background-color: #5f7fff;
-      color: #f6f9ff;
-      font-size: 18px;
+    .job-highlight-banner summary .banner-title {
+      flex: 1;
+      font-size: 13.5px;
+      font-weight: bold;
+      color: #2563eb;
     }
 
     .job-highlight-banner ul {
@@ -138,8 +133,8 @@
 
                   <div class="job-highlight-banner">
                     <details open>
-                      <summary style="cursor: pointer; font-weight: bold; color: #2563eb; display: flex; justify-content: space-between; align-items: center;">
-                        <span>🚀 On the Job Market (Summer 2026): Research Scientist | Applied Scientist | ML Scientist</span>
+                      <summary>
+                        <span class="banner-title">🚀 On the Job Market (Summer 2026): Research Scientist | Applied Scientist | ML Scientist</span>
                         <span class="banner-arrow">▾</span>
                       </summary>
                       <div style="margin-top: 10px; padding-left: 15px; border-left: 3px solid #e5e7eb;">
