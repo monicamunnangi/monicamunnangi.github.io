@@ -16,7 +16,13 @@
     }
 
     .pdf-btn {
-      background-color: #D3D3D3;
+      background-color: #eef2fb;
+      color: #1772d0;
+    }
+
+    .pdf-btn:hover {
+      background-color: #1772d0;
+      color: white;
     }
 
     .job-highlight-banner {
@@ -93,13 +99,30 @@
   <meta name="author" content="Jon Barron">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon" type="image/png" href="images/CICS.jpeg">
 </head>
 
 <body>
-  <table
-    style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="#about" class="nav-brand">Monica Munnangi</a>
+    <div class="nav-links-list">
+      <a href="#about" class="nav-menu-item">About</a>
+      <a href="#updates" class="nav-menu-item">Updates</a>
+      <a href="#publications" class="nav-menu-item">Publications</a>
+      <a href="#service" class="nav-menu-item">Service</a>
+      <a href="data/Monica_Munnangi_CV.pdf" class="nav-menu-item" target="_blank">CV ↗</a>
+    </div>
+  </div>
+</nav>
+
+  <table id="about"
+    style="width:100%;max-width:940px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
     <tbody>
       <tr style="padding:0px">
         <td style="padding:0px">
@@ -107,8 +130,8 @@
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
               <tr style="padding:0px">
-                <td style="padding:2.5%;width:63%;vertical-align:middle">
-                  <p style="text-align:center">
+                <td style="padding:2.5%;width:68%;vertical-align:middle">
+                  <p>
                     <name>Monica Munnangi</name>
                   </p>
                   <br>
@@ -131,25 +154,6 @@
                       </div>
                     </details>
                   </div>
-<!--                  <div class="job-highlight-banner">-->
-<!--                    <details>-->
-<!--                      <summary>-->
-<!--                        I am on the job market.-->
-<!--                      </summary>-->
-<!--                      <br>-->
-<!--                      I'm seeking full-time Research Scientist / ML Scientist / Applied Researcher roles starting Summer / Fall 2026.-->
-<!--                      If there's a good fit, please contact me at {first_name}{last_name}23@gmail.com.-->
-<!--                      <br> -->
-<!--                      <ul>-->
-<!--                        <li>I work in Healthcare & Natural Language Processing with a focus on evaluation and safety.-->
-<!--                          I investigate how models interpret and respond to human communication, analyze their failure modes, and build evaluation frameworks that better reflect real-world use.-->
-<!--                        </li>-->
-<!--                        <li>Interned at Allen Institute for AI and Stanford Medicine (Shah Lab) where I worked on knowledge augmentation and framework to evaluate LLM generated text.</li>-->
-<!--                        <li>Seeking Research Scientist / Machine Learning Scientist / ML Researcher / Applied Researcher roles.</li>-->
-<!--       -->
-<!--                      </ul>-->
-<!--                    </details>-->
-<!--                  </div>-->
                   <p>
                     I am a PhD candidate at <a href="https://www.khoury.northeastern.edu/">Khoury College of
                     Computer Science</a> advised by <a href="https://www.saiph.org/">Prof. Saiph Savage</a>
@@ -202,20 +206,16 @@
 <!--                    are interested in knowing more about my research or want to chat about PhD application process,-->
 <!--                    please send me an email and we can schedule a time.</a>-->
 <!--                  &lt;!&ndash; Calendly link widget end &ndash;&gt;-->
-                  <p style="text-align:center">
-                    <a href="mailto:monicamunnangi23@gmail.com">Email</a> &nbsp/&nbsp
-                    <a href="data/Monica_Munnangi_CV.pdf">CV</a> &nbsp/&nbsp
-                    <a
-                      href="https://scholar.google.com/citations?user=7pquLIgAAAAJ&hl=en">Google
-                      Scholar</a>
-                    &nbsp/&nbsp
-                    <a href="https://twitter.com/monicamreddy">Twitter</a>
-                    &nbsp/&nbsp
-                    <a href="https://monicamreddy.medium.com/">Medium</a>
+                  <p style="margin-top:14px;">
+                    <a href="mailto:monicamunnangi23@gmail.com" class="nav-link">Email</a>
+                    <a href="data/Monica_Munnangi_CV.pdf" class="nav-link">CV</a>
+                    <a href="https://scholar.google.com/citations?user=7pquLIgAAAAJ&hl=en" class="nav-link">Google Scholar</a>
+                    <a href="https://twitter.com/monicamreddy" class="nav-link">Twitter</a>
+                    <a href="https://monicamreddy.medium.com/" class="nav-link">Medium</a>
                   </p>
                 </td>
-                <td style="padding:2.5%;width:40%;max-width:40%">
-                  <a href="images/monica_circle.png"><img style="width:100%;max-width:100%" alt="profile photo"
+                <td style="padding:2.5%;width:32%;max-width:32%;text-align:center;vertical-align:middle">
+                  <a href="images/monica_circle.png"><img style="width:155px;height:155px;border-radius:50%;object-fit:cover;box-shadow:0 4px 18px rgba(0,0,0,0.13);" alt="profile photo"
                       src="images/monica_circle.png" class="hoverZoomLink"></a>
                 </td>
               </tr>
@@ -227,6 +227,7 @@
             <tbody>
               <td style="padding:10px;width:100%;vertical-align:middle">
                 <heading>Research Interests</heading>
+                <div class="section-divider"></div>
                 <p>
                   Clinical Natural Language Processing, Retrieval for Large Language Models,
                   Retrieval Augmented Generation and Robustness of LLMs
@@ -235,14 +236,16 @@
             </tbody>
           </table>
 
-          <table>
+          <table id="updates">
            <tbody>
               <tr>
                 <td style="padding:10px;width:100%;vertical-align:middle">
                   <heading>Updates</heading>
+                  <div class="section-divider"></div>
             </tbody>
           </table>
-          <table>
+          <div class="updates-scroll-wrap">
+          <table class="updates-table">
             <tr><td><b>January 2026:</b></td><td>I am a Teaching Assistant for Seminar in Human Computer Interaction 🤖: <a href=https://www.saiph.org/globalAI.html>Globally Aware AI: Designing and Creating Intelligent Interfaces Across Cultures</a>
             </td></tr>
             <tr><td><b>July 2025:</b></td><td>Our <a href=https://arxiv.org/abs/2412.12422>paper</a> titled "FactEHR: A Dataset for Evaluating Factuality in
@@ -269,26 +272,26 @@
 <!--            <tr><td><b>September 2018:</b></td><td> Started my Master in Computer Science at UMass Amherst</td></tr>-->
 <!--            <tr><td><b>August 2018:</b></td><td> Graduated from VIT Chennai, with Bachelors in Computer Science</td></tr>-->
           </table>
+          <div class="updates-fade"></div>
+          </div>
 
-          <table
+          <table id="publications"
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
               <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle">
-                  <br>
-                  <br>
-                  <br>
+                <td style="padding:20px 20px 8px;width:100%;vertical-align:middle">
                   <heading>Publications / Projects</heading>
+                  <div class="section-divider"></div>
                 </td>
               </tr>
             </tbody>
           </table>
 
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <table class="pub-table"
+            style="width:100%;border:0px;border-spacing:0 12px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
 
-              <tr onmouseout=" learnaf_stop()" onmouseover="learnaf_start()">
+              <tr class="pub-row" onmouseout=" learnaf_stop()" onmouseover="learnaf_start()">
                 <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
                     <img src="images/stanford.png" width="145" height="195" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);">
@@ -310,14 +313,14 @@
                   <p> <u>Monica Munnangi</u>*, Akshay Swaminathan*, Jason Alan Fries*, Jenelle Jindal, Sanjana Narayanan,
                     Ivan Lopez, Lucia Tu, Philip Chung, Jesutofunmi A. Omiye, Mehr Kashyap, Nigam Shah
                   </p>
-                  <i>Accepted to MLHC 2025</i> </p>
+                  <i class="venue">Accepted toMLHC 2025</i> </p>
                   <a href="https://arxiv.org/pdf/2412.12422" class="button pdf-btn" target="_blank">PDF</a>
                   <a href="https://arxiv.org/abs/2412.12422" class="button pdf-btn" target="_blank">arXiv</a>
                   <a href="https://github.com/som-shahlab/factehr" class="button pdf-btn" target="_blank">Code</a>
                 </td>
               </tr>
 
-              <tr onmouseout=" learnaf_stop()" onmouseover="learnaf_start()">
+              <tr class="pub-row" onmouseout=" learnaf_stop()" onmouseover="learnaf_start()">
                 <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
                     <img src="images/robust.png" width="145" height="195" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);">
@@ -337,14 +340,14 @@
                 <td style="padding:20px;width:160;height:160;vertical-align:middle">
                     <h3>Open (Clinical) LLMs are Sensitive to Instruction Phrasings</h3>
                   <p> Alberto Mario Ceballos Arroyo*, <u>Monica Munnangi</u>*, Jiuding Sun, Karen Y.C. Zhang, Denis Jered McInerney, Byron C. Wallace, Silvio Amir<br /> <br />
-                  <i>Accepted to BioNLP at ACL 2024</i> </p>
+                  <i class="venue">Accepted toBioNLP at ACL 2024</i> </p>
                   <a href="https://arxiv.org/pdf/2407.09429" class="button pdf-btn" target="_blank">PDF</a>
                   <a href="https://arxiv.org/abs/2407.09429" class="button pdf-btn" target="_blank">arXiv</a>
                   <a href="https://github.com/alceballosa/clin-robust" class="button pdf-btn" target="_blank">Code</a>
                 </td>
               </tr>
 
-              <tr onmouseout=" learnaf_stop()" onmouseover="learnaf_start()">
+              <tr class="pub-row" onmouseout=" learnaf_stop()" onmouseover="learnaf_start()">
                 <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
                     <img src="images/Ai2.png" width="145" height="195" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);">
@@ -364,14 +367,14 @@
                 <td style="padding:20px;width:160;height:160;vertical-align:middle">
                     <h3>On-the-fly Definition Augmentation of LLMs for Biomedical NER</h3>
                   <p> <u> Monica Munnangi,</u> Sergey Feldman, Byron C Wallace, Silvio Amir, Tom Hope, Aakanksha Naik<br /> <br />
-                  <i>Accepted to NAACL 2024</i> </p>
+                  <i class="venue">Accepted toNAACL 2024</i> </p>
                   <a href="https://arxiv.org/pdf/2404.00152" class="button pdf-btn" target="_blank">PDF</a>
                   <a href="https://arxiv.org/abs/2404.00152" class="button pdf-btn" target="_blank">arXiv</a>
                   <a href="https://github.com/allenai/beacon" class="button pdf-btn" target="_blank">Code</a>
                 </td>
               </tr>
 
-              <tr onmouseout=" learnaf_stop()" onmouseover="learnaf_start()">
+              <tr class="pub-row" onmouseout=" learnaf_stop()" onmouseover="learnaf_start()">
                 <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
                     <img src="images/ge.png" width="145" height="195" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);">
@@ -391,13 +394,13 @@
                 <td style="padding:20px;width:160;height:160;vertical-align:middle">
                     <h3>Chest Tube Detection on Chest X-Ray Images Using Convolutional Deep Neural Networks</h3>
                   <p>Khaled Younis, Yash Shah, <u> Monica Munnangi, </u> Katelyn Nye, Gireesha Rao, John M. Sabol <br /> <br />
-                  <i>Accepted to European Society of Radiology (ECR) 2020, EPOS Scientific Poster.</i> </p>
+                  <i class="venue">Accepted toEuropean Society of Radiology (ECR) 2020, EPOS Scientific Poster.</i> </p>
                   <a href="https://epos.myesr.org/poster/esr" class="button pdf-btn" target="_blank">PDF</a>
                   <a href="https://epos.myesr.org/poster/esr" class="button pdf-btn" target="_blank">arXiv</a>
                 </td>
               </tr>
 
-              <tr onmouseout=" learnaf_stop()" onmouseover="learnaf_start()">
+              <tr class="pub-row" onmouseout=" learnaf_stop()" onmouseover="learnaf_start()">
                 <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
                     <img src="images/ner.png" width="145" height="195" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);">
@@ -422,7 +425,7 @@
                 </td>
               </tr>
 
-              <tr onmouseout=" learnaf_stop()" onmouseover="learnaf_start()">
+              <tr class="pub-row" onmouseout=" learnaf_stop()" onmouseover="learnaf_start()">
                 <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
                     <img src="images/682.png" width="145" height="195" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);">
@@ -449,12 +452,11 @@
             </tbody>
           </table>
 
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <table id="service" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
       <tbody>
         <td style="padding:20px;width:100%;vertical-align:middle">
-          <br>
-          <br>
           <heading>Teaching and Mentoring</heading>
+          <div class="section-divider"></div>
           <ul>
             <li>Teaching Assistant for <u> Unsupervised Machine Learning and Data Mining </u> assisted Prof. Pavlu Virgil
                     at Northeastern University in Spring 2023 semester
@@ -478,6 +480,7 @@
       <tbody>
         <td style="padding:20px;width:100%;vertical-align:middle">
           <heading>Academic Service</heading>
+          <div class="section-divider"></div>
           <ul>
             <li> Communications chair (Organizing Committee) Conference on Health, Inference and Learning (CHIL), 2024
             </li>
@@ -500,6 +503,7 @@
       <tbody>
         <td style="padding:20px;width:100%;vertical-align:middle">
           <heading>Awards and Grants</heading>
+          <div class="section-divider"></div>
           <ul>
             <li> Student Grant for NeurIPS 2020
             </li>
@@ -518,6 +522,7 @@
       <tbody>
         <td style="padding:20px;width:100%;vertical-align:middle">
           <heading>Selected Reading</heading>
+          <div class="section-divider"></div>
           <ul>
             <li><a href="https://www.amazon.com/Steve-Jobs-Walter-Isaacson/dp/1451648537">Steve Jobs</a> by Walter
               Issacson
@@ -561,6 +566,7 @@
         <tr>
           <td>
             <heading>Extra-Curriculars and Voluntary Work</heading>
+          <div class="section-divider"></div>
           </td>
         </tr>
       </tbody>
@@ -568,7 +574,7 @@
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
       <tbody>
 
-        <tr onmouseout="learnaf_stop()" onmouseover="learnaf_start()">
+        <tr class="pub-row" onmouseout="learnaf_stop()" onmouseover="learnaf_start()">
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
               <img src='images/nso.jpeg' width="120" height="120">
@@ -603,7 +609,7 @@
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
       <tbody>
 
-        <tr onmouseout="learnaf_stop()" onmouseover="learnaf_start()">
+        <tr class="pub-row" onmouseout="learnaf_stop()" onmouseover="learnaf_start()">
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
               <img src='images/technocrats.png' width="120" height="120">
@@ -637,7 +643,7 @@
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
       <tbody>
 
-        <tr onmouseout="learnaf_stop()" onmouseover="learnaf_start()">
+        <tr class="pub-row" onmouseout="learnaf_stop()" onmouseover="learnaf_start()">
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
               <img src='images/Hackmed.png' width="120" height="120">
@@ -674,7 +680,7 @@
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
       <tbody>
 
-        <tr onmouseout="learnaf_stop()" onmouseover="learnaf_start()">
+        <tr class="pub-row" onmouseout="learnaf_stop()" onmouseover="learnaf_start()">
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
               <img src='images/hmun-logo.png' width="120" height="120">
@@ -707,7 +713,7 @@
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
       <tbody>
 
-        <tr onmouseout="learnaf_stop()" onmouseover="learnaf_start()">
+        <tr class="pub-row" onmouseout="learnaf_stop()" onmouseover="learnaf_start()">
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
               <img src='images/Orange_leaf.png' width="120" height="120">
@@ -745,7 +751,7 @@
         <td style="padding:0px">
           <br>
           <p style="text-align:left;font-size:small;">
-            Credits : <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron </a> for the template.
+            Credits : <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron</a> for the template. Redesigned with <a href="https://claude.ai/code">Claude Code</a>.
           </p>
         </td>
       </tr>
