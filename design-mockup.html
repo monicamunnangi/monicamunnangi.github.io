@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design Direction Mockups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f0f2f5; font-family: 'Inter', sans-serif; padding: 40px 20px; }
+  h1 { text-align: center; font-size: 22px; color: #333; margin-bottom: 8px; font-weight: 600; }
+  .subtitle { text-align: center; color: #666; margin-bottom: 40px; font-size: 14px; }
+  .label { text-align: center; display: inline-block; background: #1772d0; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 16px; }
+  .options { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 32px; max-width: 800px; margin: 0 auto; }
+  .option-wrap { display: flex; flex-direction: column; align-items: center; }
+  .option-wrap h2 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: #333; }
+  .option-wrap .desc { font-size: 12px; color: #666; margin-bottom: 12px; text-align: center; max-width: 340px; line-height: 1.5; }
+
+  /* ========= OPTION A - Refined Lato (subtle upgrade) ========= */
+  .preview-a {
+    width: 100%; background: white; border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08); overflow: hidden;
+    font-family: 'Lato', sans-serif;
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .preview-a:hover { border-color: #1772d0; }
+  .preview-a .inner { padding: 28px 30px; max-width: 520px; margin: 0 auto; }
+  .preview-a .name-a { font-size: 36px; font-weight: 700; color: #111; text-align: center; letter-spacing: -0.5px; }
+  .preview-a .bio-a { font-size: 16px; line-height: 1.75; color: #333; margin-top: 16px; }
+  .preview-a .links-a { display: flex; justify-content: center; gap: 18px; margin-top: 18px; }
+  .preview-a .links-a a { font-size: 14px; color: #1772d0; text-decoration: none; font-weight: 500; }
+  .preview-a .links-a a:hover { color: #f09228; }
+  .preview-a .section-head-a { font-size: 20px; font-weight: 700; color: #111; margin-top: 24px; padding-bottom: 6px; border-bottom: 2px solid #1772d0; }
+  .preview-a .pub-a { display: flex; gap: 14px; margin-top: 16px; padding: 14px; border-radius: 8px; background: #f8f9fb; }
+  .preview-a .pub-img-a { width: 70px; height: 85px; background: #dde4f0; border-radius: 4px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #999; }
+  .preview-a .pub-title-a { font-size: 14px; font-weight: 700; color: #111; line-height: 1.4; }
+  .preview-a .pub-meta-a { font-size: 12px; color: #555; margin-top: 4px; line-height: 1.5; }
+  .preview-a .badge-a { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; background: #e8f0fe; color: #1772d0; margin-top: 6px; font-weight: 600; }
+
+  /* ========= OPTION B - Inter Modern ========= */
+  .preview-b {
+    width: 100%; background: white; border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08); overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .preview-b:hover { border-color: #1772d0; }
+  .preview-b .inner { padding: 32px 30px; }
+  .preview-b .name-b { font-size: 32px; font-weight: 700; color: #0d1117; letter-spacing: -1px; }
+  .preview-b .tagline-b { font-size: 13px; font-weight: 500; color: #1772d0; letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
+  .preview-b .bio-b { font-size: 15px; line-height: 1.7; color: #444; margin-top: 14px; }
+  .preview-b .links-b { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+  .preview-b .links-b a { font-size: 13px; color: #1772d0; text-decoration: none; font-weight: 500; padding: 5px 12px; border: 1.5px solid #1772d0; border-radius: 6px; }
+  .preview-b .links-b a:hover { background: #1772d0; color: white; }
+  .preview-b .section-head-b { font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 24px; margin-bottom: 12px; }
+  .preview-b .pub-b { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid #f0f0f0; }
+  .preview-b .pub-img-b { width: 72px; height: 88px; background: linear-gradient(135deg, #dde4f0, #c5d3f0); border-radius: 6px; flex-shrink: 0; }
+  .preview-b .pub-title-b { font-size: 14px; font-weight: 600; color: #0d1117; line-height: 1.4; }
+  .preview-b .pub-meta-b { font-size: 12px; color: #666; margin-top: 5px; line-height: 1.5; }
+  .preview-b .btn-b { display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: 4px; background: #f5f7fa; color: #555; margin-top: 8px; margin-right: 4px; font-weight: 500; }
+
+  /* ========= OPTION C - DM Sans Warm ========= */
+  .preview-c {
+    width: 100%; background: #fdfcfb; border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08); overflow: hidden;
+    font-family: 'DM Sans', sans-serif;
+    border: 2px solid #1772d0;
+    transition: border-color 0.2s;
+  }
+  .preview-c .inner { padding: 30px; }
+  .preview-c .hero-c { display: flex; gap: 24px; align-items: flex-start; }
+  .preview-c .hero-text-c { flex: 1; }
+  .preview-c .profile-img-c { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; flex-shrink: 0; box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
+  .preview-c .name-c { font-size: 34px; font-weight: 700; color: #1a1a1a; letter-spacing: -0.5px; }
+  .preview-c .bio-c { font-size: 15px; line-height: 1.8; color: #3a3a3a; margin-top: 10px; }
+  .preview-c .links-c { display: flex; gap: 16px; margin-top: 14px; flex-wrap: wrap; align-items: center; }
+  .preview-c .links-c a { font-size: 14px; color: #1772d0; text-decoration: none; font-weight: 500; }
+  .preview-c .links-c a:hover { color: #f09228; }
+  .preview-c .sep-c { color: #ccc; }
+  .preview-c .section-head-c { font-size: 22px; font-weight: 700; color: #1a1a1a; margin-top: 28px; padding-bottom: 8px; }
+  .preview-c .divider-c { height: 3px; width: 40px; background: #1772d0; border-radius: 2px; margin-bottom: 14px; }
+  .preview-c .pub-c { display: flex; gap: 16px; margin-top: 12px; padding: 16px; background: white; border-radius: 10px; border: 1px solid #eee; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+  .preview-c .pub-img-c { width: 68px; height: 82px; background: linear-gradient(160deg, #dde4f0, #b8ccf0); border-radius: 6px; flex-shrink: 0; }
+  .preview-c .pub-title-c { font-size: 14px; font-weight: 600; color: #1a1a1a; line-height: 1.4; }
+  .preview-c .pub-meta-c { font-size: 12px; color: #666; margin-top: 5px; line-height: 1.5; }
+  .preview-c .venue-c { display: inline-block; font-size: 11px; font-weight: 600; color: #1772d0; margin-top: 6px; }
+  .preview-c .btn-c { display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: 4px; background: #eef2fb; color: #1772d0; margin-top: 6px; margin-right: 4px; font-weight: 500; }
+
+</style>
+</head>
+<body>
+
+<h1>Design Preview — Option C (DM Sans Warm)</h1>
+<p class="subtitle">Your colors kept. DM Sans font, card-style publications, profile photo.</p>
+
+<div class="options">
+
+  <!-- OPTION C -->
+  <div class="option-wrap">
+    <div class="label">C</div>
+    <h2>DM Sans Warm</h2>
+    <p class="desc">DM Sans font — slightly warmer feel. Card-style publications with soft shadows, blue accent bar under section headings.</p>
+    <div class="preview-c">
+      <div class="inner">
+        <div class="hero-c">
+          <div class="hero-text-c">
+            <div class="name-c">Monica Munnangi</div>
+            <div class="bio-c">
+              I am a PhD candidate at Khoury College of Computer Science advised by Prof. Saiph Savage and a member of the Civic A.I. Lab...
+            </div>
+            <div class="links-c">
+              <a href="#">Email</a><span class="sep-c">/</span>
+              <a href="#">CV</a><span class="sep-c">/</span>
+              <a href="#">Scholar</a><span class="sep-c">/</span>
+              <a href="#">Twitter</a>
+            </div>
+          </div>
+          <img src="images/monica_circle.png" class="profile-img-c" alt="Monica Munnangi">
+        </div>
+        <div class="section-head-c">Publications / Projects</div>
+        <div class="divider-c"></div>
+        <div class="pub-c">
+          <div class="pub-img-c"></div>
+          <div>
+            <div class="pub-title-c">FactEHR: A Dataset for Evaluating Factuality in Clinical Notes Using LLMs</div>
+            <div class="pub-meta-c">Monica Munnangi*, Akshay Swaminathan*, et al.</div>
+            <div class="venue-c">MLHC 2025</div><br>
+            <span class="btn-c">PDF</span><span class="btn-c">arXiv</span><span class="btn-c">Code</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<p style="text-align:center; margin-top:40px; font-size:13px; color:#999;">Tell me which direction (A, B, C) you prefer — or if you want a mix of elements from multiple options.</p>
+
+</body>
+</html>

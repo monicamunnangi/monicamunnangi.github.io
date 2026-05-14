@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Font Comparison</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f0f2f5; padding: 32px 20px 60px; }
+h1 { text-align: center; font-size: 19px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; font-family: 'Inter', sans-serif; }
+.subtitle { text-align: center; color: #666; font-size: 13px; margin-bottom: 36px; font-family: 'Inter', sans-serif; }
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.card:hover { border-color: #1772d0; box-shadow: 0 8px 30px rgba(23,114,208,0.15); }
+.card.selected { border-color: #1772d0; }
+.card-label {
+  background: #1772d0;
+  color: white;
+  text-align: center;
+  padding: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-family: 'Inter', sans-serif;
+}
+.card.selected .card-label { background: #0f56a8; }
+.selected-tick { display: none; }
+.card.selected .selected-tick { display: inline; }
+
+/* ── shared layout ── */
+.mock-nav {
+  border-bottom: 1px solid #eaecf0;
+  border-top: 3px solid #1772d0;
+  padding: 0 20px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+}
+.mock-nav .brand { font-size: 14px; font-weight: 700; color: #1a1a1a; letter-spacing: -0.3px; }
+.mock-nav .links { display: flex; gap: 2px; }
+.mock-nav .lnk { font-size: 12px; color: #555; padding: 4px 9px; border-radius: 5px; font-weight: 500; }
+
+.mock-body { padding: 20px; }
+.mock-hero { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 18px; }
+.mock-photo { width: 72px; height: 72px; border-radius: 50%; flex-shrink: 0; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.12); }
+.mock-photo img { width: 100%; height: 100%; object-fit: cover; }
+.mock-name { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; color: #1a1a1a; line-height: 1.1; }
+.mock-bio { font-size: 13.5px; color: #444; line-height: 1.65; margin-top: 6px; letter-spacing: -0.01em; }
+.mock-pills { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 10px; }
+.mock-pill { font-size: 11.5px; padding: 3px 10px; border: 1.5px solid #d0daf0; border-radius: 14px; color: #1772d0; font-weight: 500; }
+
+.mock-section-head { font-size: 16px; font-weight: 700; color: #1a1a1a; }
+.mock-divider { height: 3px; width: 32px; background: #1772d0; border-radius: 2px; margin: 4px 0 12px; }
+
+.mock-pub { display: flex; gap: 12px; padding: 12px; background: white; border: 1px solid #e8edf5; border-radius: 10px; margin-bottom: 8px; }
+.mock-thumb { width: 52px; height: 66px; border-radius: 5px; background: linear-gradient(135deg, #dde4f0, #b8ccf0); flex-shrink: 0; }
+.mock-pub-title { font-size: 13px; font-weight: 600; color: #1a1a1a; line-height: 1.4; }
+.mock-pub-authors { font-size: 11.5px; color: #666; margin-top: 3px; line-height: 1.4; }
+.mock-pub-venue { font-size: 11.5px; color: #1772d0; font-weight: 500; font-style: italic; margin-top: 3px; }
+.mock-pub-btns { display: flex; gap: 5px; margin-top: 6px; }
+.mock-pub-btn { font-size: 10.5px; padding: 2px 8px; border-radius: 4px; background: #eef2fb; color: #1772d0; font-weight: 500; }
+
+.mock-update { display: flex; gap: 10px; font-size: 12px; color: #444; padding: 5px 0; border-bottom: 1px solid #f5f5f5; line-height: 1.4; }
+.mock-update-date { color: #1772d0; font-weight: 600; min-width: 68px; flex-shrink: 0; font-size: 11.5px; }
+
+/* ── A: Inter ── */
+.font-inter * { font-family: 'Inter', sans-serif; }
+
+/* ── B: Source Sans 3 ── */
+.font-source * { font-family: 'Source Sans 3', sans-serif; }
+
+/* ── C: IBM Plex Sans ── */
+.font-ibm * { font-family: 'IBM Plex Sans', sans-serif; }
+</style>
+</head>
+<body>
+
+<h1>Font Comparison</h1>
+<p class="subtitle">Same layout, same colors — only the font changes. Click a card to select it.</p>
+
+<div class="grid">
+
+  <!-- A: INTER -->
+  <div class="card" onclick="pick(this,'inter')" id="card-inter">
+    <div class="card-label">A — Inter <span class="selected-tick">✓</span></div>
+    <div class="font-inter">
+      <div class="mock-nav">
+        <span class="brand">Monica Munnangi</span>
+        <div class="links">
+          <span class="lnk">About</span>
+          <span class="lnk">Updates</span>
+          <span class="lnk">Publications</span>
+          <span class="lnk">CV ↗</span>
+        </div>
+      </div>
+      <div class="mock-body">
+        <div class="mock-hero">
+          <div class="mock-photo"><img src="images/monica_circle.png" alt="Monica"></div>
+          <div>
+            <div class="mock-name">Monica Munnangi</div>
+            <div class="mock-bio">PhD Candidate at Khoury College of Computer Science. My research focuses on NLP in knowledge-intensive domains, evaluation of LLMs in high-stakes settings.</div>
+            <div class="mock-pills">
+              <span class="mock-pill">Email</span>
+              <span class="mock-pill">CV</span>
+              <span class="mock-pill">Google Scholar</span>
+              <span class="mock-pill">Twitter</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mock-section-head">Updates</div>
+        <div class="mock-divider"></div>
+        <div class="mock-update"><span class="mock-update-date">Jan 2026</span><span>Teaching Assistant for Seminar in HCI — Globally Aware AI...</span></div>
+        <div class="mock-update"><span class="mock-update-date">Jul 2025</span><span>FactEHR accepted to MLHC 2025 at Mayo Clinic ⚕️</span></div>
+
+        <div class="mock-section-head" style="margin-top:16px">Publications</div>
+        <div class="mock-divider"></div>
+        <div class="mock-pub">
+          <div class="mock-thumb"></div>
+          <div>
+            <div class="mock-pub-title">FactEHR: A Dataset for Evaluating Factuality in Clinical Notes Using LLMs</div>
+            <div class="mock-pub-authors"><u>Monica Munnangi</u>*, Akshay Swaminathan*, Jason Alan Fries* et al.</div>
+            <div class="mock-pub-venue">Accepted to MLHC 2025</div>
+            <div class="mock-pub-btns">
+              <span class="mock-pub-btn">PDF</span>
+              <span class="mock-pub-btn">arXiv</span>
+              <span class="mock-pub-btn">Code</span>
+            </div>
+          </div>
+        </div>
+        <div class="mock-pub">
+          <div class="mock-thumb"></div>
+          <div>
+            <div class="mock-pub-title">Open (Clinical) LLMs are Sensitive to Instruction Phrasings</div>
+            <div class="mock-pub-authors">Alberto Mario Ceballos Arroyo*, <u>Monica Munnangi</u>* et al.</div>
+            <div class="mock-pub-venue">Accepted to BioNLP at ACL 2024</div>
+            <div class="mock-pub-btns">
+              <span class="mock-pub-btn">PDF</span>
+              <span class="mock-pub-btn">arXiv</span>
+              <span class="mock-pub-btn">Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B: SOURCE SANS 3 -->
+  <div class="card" onclick="pick(this,'source')" id="card-source">
+    <div class="card-label">B — Source Sans Pro <span class="selected-tick">✓</span></div>
+    <div class="font-source">
+      <div class="mock-nav">
+        <span class="brand">Monica Munnangi</span>
+        <div class="links">
+          <span class="lnk">About</span>
+          <span class="lnk">Updates</span>
+          <span class="lnk">Publications</span>
+          <span class="lnk">CV ↗</span>
+        </div>
+      </div>
+      <div class="mock-body">
+        <div class="mock-hero">
+          <div class="mock-photo"><img src="images/monica_circle.png" alt="Monica"></div>
+          <div>
+            <div class="mock-name">Monica Munnangi</div>
+            <div class="mock-bio">PhD Candidate at Khoury College of Computer Science. My research focuses on NLP in knowledge-intensive domains, evaluation of LLMs in high-stakes settings.</div>
+            <div class="mock-pills">
+              <span class="mock-pill">Email</span>
+              <span class="mock-pill">CV</span>
+              <span class="mock-pill">Google Scholar</span>
+              <span class="mock-pill">Twitter</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mock-section-head">Updates</div>
+        <div class="mock-divider"></div>
+        <div class="mock-update"><span class="mock-update-date">Jan 2026</span><span>Teaching Assistant for Seminar in HCI — Globally Aware AI...</span></div>
+        <div class="mock-update"><span class="mock-update-date">Jul 2025</span><span>FactEHR accepted to MLHC 2025 at Mayo Clinic ⚕️</span></div>
+
+        <div class="mock-section-head" style="margin-top:16px">Publications</div>
+        <div class="mock-divider"></div>
+        <div class="mock-pub">
+          <div class="mock-thumb"></div>
+          <div>
+            <div class="mock-pub-title">FactEHR: A Dataset for Evaluating Factuality in Clinical Notes Using LLMs</div>
+            <div class="mock-pub-authors"><u>Monica Munnangi</u>*, Akshay Swaminathan*, Jason Alan Fries* et al.</div>
+            <div class="mock-pub-venue">Accepted to MLHC 2025</div>
+            <div class="mock-pub-btns">
+              <span class="mock-pub-btn">PDF</span>
+              <span class="mock-pub-btn">arXiv</span>
+              <span class="mock-pub-btn">Code</span>
+            </div>
+          </div>
+        </div>
+        <div class="mock-pub">
+          <div class="mock-thumb"></div>
+          <div>
+            <div class="mock-pub-title">Open (Clinical) LLMs are Sensitive to Instruction Phrasings</div>
+            <div class="mock-pub-authors">Alberto Mario Ceballos Arroyo*, <u>Monica Munnangi</u>* et al.</div>
+            <div class="mock-pub-venue">Accepted to BioNLP at ACL 2024</div>
+            <div class="mock-pub-btns">
+              <span class="mock-pub-btn">PDF</span>
+              <span class="mock-pub-btn">arXiv</span>
+              <span class="mock-pub-btn">Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C: IBM PLEX SANS -->
+  <div class="card" onclick="pick(this,'ibm')" id="card-ibm">
+    <div class="card-label">C — IBM Plex Sans <span class="selected-tick">✓</span></div>
+    <div class="font-ibm">
+      <div class="mock-nav">
+        <span class="brand">Monica Munnangi</span>
+        <div class="links">
+          <span class="lnk">About</span>
+          <span class="lnk">Updates</span>
+          <span class="lnk">Publications</span>
+          <span class="lnk">CV ↗</span>
+        </div>
+      </div>
+      <div class="mock-body">
+        <div class="mock-hero">
+          <div class="mock-photo"><img src="images/monica_circle.png" alt="Monica"></div>
+          <div>
+            <div class="mock-name">Monica Munnangi</div>
+            <div class="mock-bio">PhD Candidate at Khoury College of Computer Science. My research focuses on NLP in knowledge-intensive domains, evaluation of LLMs in high-stakes settings.</div>
+            <div class="mock-pills">
+              <span class="mock-pill">Email</span>
+              <span class="mock-pill">CV</span>
+              <span class="mock-pill">Google Scholar</span>
+              <span class="mock-pill">Twitter</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mock-section-head">Updates</div>
+        <div class="mock-divider"></div>
+        <div class="mock-update"><span class="mock-update-date">Jan 2026</span><span>Teaching Assistant for Seminar in HCI — Globally Aware AI...</span></div>
+        <div class="mock-update"><span class="mock-update-date">Jul 2025</span><span>FactEHR accepted to MLHC 2025 at Mayo Clinic ⚕️</span></div>
+
+        <div class="mock-section-head" style="margin-top:16px">Publications</div>
+        <div class="mock-divider"></div>
+        <div class="mock-pub">
+          <div class="mock-thumb"></div>
+          <div>
+            <div class="mock-pub-title">FactEHR: A Dataset for Evaluating Factuality in Clinical Notes Using LLMs</div>
+            <div class="mock-pub-authors"><u>Monica Munnangi</u>*, Akshay Swaminathan*, Jason Alan Fries* et al.</div>
+            <div class="mock-pub-venue">Accepted to MLHC 2025</div>
+            <div class="mock-pub-btns">
+              <span class="mock-pub-btn">PDF</span>
+              <span class="mock-pub-btn">arXiv</span>
+              <span class="mock-pub-btn">Code</span>
+            </div>
+          </div>
+        </div>
+        <div class="mock-pub">
+          <div class="mock-thumb"></div>
+          <div>
+            <div class="mock-pub-title">Open (Clinical) LLMs are Sensitive to Instruction Phrasings</div>
+            <div class="mock-pub-authors">Alberto Mario Ceballos Arroyo*, <u>Monica Munnangi</u>* et al.</div>
+            <div class="mock-pub-venue">Accepted to BioNLP at ACL 2024</div>
+            <div class="mock-pub-btns">
+              <span class="mock-pub-btn">PDF</span>
+              <span class="mock-pub-btn">arXiv</span>
+              <span class="mock-pub-btn">Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<p style="text-align:center;margin-top:28px;font-size:13px;color:#999;font-family:'Inter',sans-serif;">Click to select — then tell me which one (A, B, or C) and I'll apply it to the site.</p>
+
+<script>
+function pick(el, name) {
+  document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+</script>
+</body>
+</html>

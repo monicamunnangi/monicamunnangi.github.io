@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navigation Layout Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f0f2f5; font-family: 'DM Sans', sans-serif; padding: 32px 20px 60px; color: #1a1a1a; letter-spacing: -0.01em; }
+h1 { text-align: center; font-size: 20px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
+.subtitle { text-align: center; color: #666; font-size: 14px; margin-bottom: 40px; }
+
+.options { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; max-width: 1100px; margin: 0 auto; }
+@media (max-width: 800px) { .options { grid-template-columns: 1fr; } }
+
+.option-wrap { display: flex; flex-direction: column; }
+.option-label { display: inline-block; background: #1772d0; color: white; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; letter-spacing: 0.3px; margin-bottom: 10px; align-self: flex-start; }
+.option-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.option-desc { font-size: 13px; color: #666; margin-bottom: 14px; line-height: 1.5; }
+
+/* ===== SHARED MOCKUP SHELL ===== */
+.mockup-shell {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.mockup-shell:hover { border-color: #1772d0; box-shadow: 0 8px 32px rgba(23,114,208,0.15); }
+.mockup-shell.selected { border-color: #1772d0; box-shadow: 0 8px 32px rgba(23,114,208,0.2); }
+.selected-badge { display: none; text-align: center; padding: 8px; background: #1772d0; color: white; font-size: 12px; font-weight: 600; }
+.mockup-shell.selected .selected-badge { display: block; }
+
+/* ===== OPTION A: STICKY TOP NAVBAR ===== */
+.navbar-a {
+  background: white;
+  border-bottom: 1px solid #eaecf0;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+  position: sticky;
+  top: 0;
+}
+.navbar-a .brand { font-size: 16px; font-weight: 700; color: #1a1a1a; letter-spacing: -0.3px; }
+.navbar-a .nav-items { display: flex; gap: 4px; }
+.navbar-a .nav-item { font-size: 13px; color: #555; padding: 5px 12px; border-radius: 6px; font-weight: 500; cursor: pointer; transition: all 0.15s; }
+.navbar-a .nav-item:hover { color: #1772d0; background: #f0f5ff; }
+.navbar-a .nav-item.active { color: #1772d0; font-weight: 600; }
+.body-a { padding: 24px 28px; }
+.hero-a { display: flex; gap: 20px; align-items: center; margin-bottom: 24px; }
+.photo-a { width: 90px; height: 90px; border-radius: 50%; background: linear-gradient(135deg, #c8d8f8, #91b2ff); flex-shrink: 0; overflow: hidden; }
+.photo-a img { width: 100%; height: 100%; object-fit: cover; }
+.name-a { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
+.bio-a { font-size: 13px; color: #444; line-height: 1.6; margin-top: 4px; }
+.pills-a { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.pill-a { font-size: 12px; padding: 3px 10px; border: 1.5px solid #d0daf0; border-radius: 14px; color: #1772d0; font-weight: 500; }
+.section-mini { margin-top: 16px; }
+.section-head-a { font-size: 13px; font-weight: 700; color: #1a1a1a; margin-bottom: 3px; }
+.divider-a { height: 3px; width: 30px; background: #1772d0; border-radius: 2px; margin-bottom: 10px; }
+.update-row { display: flex; gap: 10px; font-size: 12px; color: #444; padding: 5px 0; border-bottom: 1px solid #f5f5f5; line-height: 1.4; }
+.update-date { color: #1772d0; font-weight: 600; min-width: 80px; flex-shrink: 0; }
+.pub-mini { display: flex; gap: 12px; padding: 10px; background: white; border: 1px solid #eee; border-radius: 8px; margin-top: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+.pub-thumb { width: 44px; height: 56px; background: linear-gradient(135deg, #dde4f0, #b8ccf0); border-radius: 4px; flex-shrink: 0; }
+.pub-title-mini { font-size: 12px; font-weight: 600; line-height: 1.4; color: #1a1a1a; }
+.pub-meta-mini { font-size: 11px; color: #777; margin-top: 3px; }
+
+/* ===== OPTION B: TAB NAV ===== */
+.tab-bar {
+  background: white;
+  border-bottom: 1px solid #eaecf0;
+  padding: 0 24px;
+  display: flex;
+  gap: 0;
+  align-items: flex-end;
+}
+.tab-bar .tab-brand { font-size: 15px; font-weight: 700; color: #1a1a1a; padding: 14px 20px 14px 0; margin-right: 12px; letter-spacing: -0.3px; border-right: 1px solid #eee; }
+.tab-item { font-size: 13px; color: #777; padding: 14px 14px 12px; border-bottom: 3px solid transparent; font-weight: 500; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+.tab-item:hover { color: #1772d0; }
+.tab-item.active { color: #1772d0; font-weight: 600; border-bottom-color: #1772d0; }
+.body-b { padding: 24px 28px; }
+.hero-b { display: flex; gap: 20px; align-items: center; margin-bottom: 20px; }
+.photo-b { width: 90px; height: 90px; border-radius: 50%; background: linear-gradient(135deg, #c8d8f8, #91b2ff); flex-shrink: 0; overflow: hidden; }
+.photo-b img { width: 100%; height: 100%; object-fit: cover; }
+.name-b { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
+.bio-b { font-size: 13px; color: #444; line-height: 1.6; margin-top: 4px; }
+.pills-b { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.pill-b { font-size: 12px; padding: 3px 10px; border: 1.5px solid #d0daf0; border-radius: 14px; color: #1772d0; font-weight: 500; }
+.tab-content-label { font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 1px; margin: 16px 0 6px; }
+.tab-hint { background: #f5f8ff; border-radius: 8px; padding: 10px 14px; font-size: 12px; color: #555; border-left: 3px solid #1772d0; line-height: 1.5; }
+
+</style>
+</head>
+<body>
+
+<h1>Navigation Layout Options</h1>
+<p class="subtitle">Both options keep your full content — different ways to organize it as it grows.</p>
+
+<div class="options">
+
+  <!-- OPTION A: STICKY NAVBAR -->
+  <div class="option-wrap">
+    <div class="option-label">A</div>
+    <div class="option-title">Sticky Top Navbar</div>
+    <p class="option-desc">Single scrolling page. Navbar stays fixed at top — clicking a section smoothly scrolls there. Simple, professional, most common for academic sites.</p>
+    <div class="mockup-shell" onclick="select(this, 'a')" id="opt-a">
+      <div class="selected-badge">✓ Selected</div>
+      <div class="navbar-a">
+        <div class="brand">Monica Munnangi</div>
+        <div class="nav-items">
+          <div class="nav-item active">About</div>
+          <div class="nav-item">Research</div>
+          <div class="nav-item">Publications</div>
+          <div class="nav-item">CV</div>
+        </div>
+      </div>
+      <div class="body-a">
+        <div class="hero-a">
+          <div class="photo-a"><img src="images/monica_circle.png" alt="Monica"></div>
+          <div>
+            <div class="name-a">Monica Munnangi</div>
+            <div class="bio-a">PhD Candidate, Khoury College of Computer Science. NLP research in knowledge-intensive domains...</div>
+            <div class="pills-a">
+              <span class="pill-a">Email</span>
+              <span class="pill-a">CV</span>
+              <span class="pill-a">Google Scholar</span>
+              <span class="pill-a">Twitter</span>
+            </div>
+          </div>
+        </div>
+        <div class="section-mini">
+          <div class="section-head-a">Updates</div>
+          <div class="divider-a"></div>
+          <div class="update-row"><span class="update-date">Jan 2026</span><span>Teaching Assistant for Seminar in HCI — Globally Aware AI...</span></div>
+          <div class="update-row"><span class="update-date">Jul 2025</span><span>FactEHR paper accepted to MLHC 2025 at Mayo Clinic...</span></div>
+        </div>
+        <div class="section-mini" style="margin-top:16px">
+          <div class="section-head-a">Publications</div>
+          <div class="divider-a"></div>
+          <div class="pub-mini">
+            <div class="pub-thumb"></div>
+            <div><div class="pub-title-mini">FactEHR: A Dataset for Evaluating Factuality in Clinical Notes</div><div class="pub-meta-mini">Munnangi et al. · MLHC 2025</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPTION B: TABS -->
+  <div class="option-wrap">
+    <div class="option-label">B</div>
+    <div class="option-title">Tab Navigation</div>
+    <p class="option-desc">Each section is its own "page" — clicking a tab swaps the content without scrolling. Great for keeping each area focused. No scroll fatigue.</p>
+    <div class="mockup-shell" onclick="select(this, 'b')" id="opt-b">
+      <div class="selected-badge">✓ Selected</div>
+      <div class="tab-bar">
+        <div class="tab-brand">Monica Munnangi</div>
+        <div class="tab-item active">About</div>
+        <div class="tab-item">Publications</div>
+        <div class="tab-item">CV / Service</div>
+        <div class="tab-item">Contact</div>
+      </div>
+      <div class="body-b">
+        <div class="hero-b">
+          <div class="photo-b"><img src="images/monica_circle.png" alt="Monica"></div>
+          <div>
+            <div class="name-b">Monica Munnangi</div>
+            <div class="bio-b">PhD Candidate, Khoury College of Computer Science. NLP research in knowledge-intensive domains...</div>
+            <div class="pills-b">
+              <span class="pill-b">Email</span>
+              <span class="pill-b">CV</span>
+              <span class="pill-b">Google Scholar</span>
+              <span class="pill-b">Twitter</span>
+            </div>
+          </div>
+        </div>
+        <div class="tab-content-label">Currently showing: About</div>
+        <div class="tab-hint">
+          <strong>Publications tab</strong> would show your papers list.<br>
+          <strong>CV / Service tab</strong> would show teaching, awards, academic service.<br>
+          <strong>Contact tab</strong> would show your links and job market banner.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<p style="text-align:center;margin-top:32px;font-size:13px;color:#999;">Click a card to select, then tell me which you prefer (A or B) — or mix of both.</p>
+
+<script>
+function select(el, choice) {
+  document.querySelectorAll('.mockup-shell').forEach(e => e.classList.remove('selected'));
+  el.classList.add('selected');
+}
+</script>
+</body>
+</html>
